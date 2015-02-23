@@ -57,7 +57,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="GravadorPNCC">
-                <param name="android-package" value="br.com.agm.gravador.pncc.PNCCPlugin"/>
+                <param name="android-package" value="br.com.agm.gravador.pncc.GravadorPNCC"/>
             </feature>
         </config-file>
 
@@ -68,7 +68,7 @@
         </config-file>
 
         <source-file
-            src="src/android/PNCCPlugin.java"
+            src="src/android/GravadorPNCC.java"
             target-dir="src/br/com/agm/gravador/pncc" />
 
         <source-file

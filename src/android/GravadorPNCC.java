@@ -10,7 +10,7 @@ import android.media.AudioFormat;
 import android.media.MediaRecorder.AudioSource;
 import br.com.agm.gravador.capture.MicRecorder;
 
-public class PNCCPlugin extends CordovaPlugin {
+public class GravadorPNCC extends CordovaPlugin {
 
 	private PNCCNative pnccNative;
 
