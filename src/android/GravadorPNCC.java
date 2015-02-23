@@ -24,7 +24,7 @@ public class GravadorPNCC extends CordovaPlugin {
 
 	@Override
 	protected void pluginInitialize() {
-		PNCCPlugin.webView = super.webView;
+		GravadorPNCC.webView = super.webView;
 		pnccNative = new PNCCNative();
 		micRecorder = new MicRecorder(AudioSource.VOICE_RECOGNITION, 16000, AudioFormat.CHANNEL_IN_MONO,
 				AudioFormat.ENCODING_PCM_16BIT);
