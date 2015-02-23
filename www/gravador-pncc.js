@@ -4,10 +4,10 @@ var cordova = require('cordova'),
 
 exports.start = function (name, callback, error) {
 	
-	this.exec(callback, error,'PNCCPlugin','start',[name]);
+	exec(callback, error,'PNCCPlugin','start',[name]);
 };
 
 exports.stop = function (callback, error) {
 	
-	this.exec(callback, error,'PNCCPlugin','stop',[]);
+	exec(callback, error,'PNCCPlugin','stop',[]);
 };
