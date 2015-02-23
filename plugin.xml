@@ -7,7 +7,7 @@
     <name>GravadorPNCC</name>
 
     <description>The purpose of the plugin is to create an platform independent javascript interface for Cordova based mobile applications to access the specific Notification API on each platform.</description>
-    <repo>https://github.com/katzer/cordova-plugin-local-notifications.git</repo>
+    <repo>https://github.com/gustavovera/gravador-pncc.git</repo>
     <keywords>capture audio,wave,pncc,android</keywords>
     <license>Apache 2.0</license>
 
