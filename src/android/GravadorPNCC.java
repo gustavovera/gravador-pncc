@@ -8,6 +8,7 @@ import org.json.JSONException;
 
 import android.media.AudioFormat;
 import android.media.MediaRecorder.AudioSource;
+import android.util.Log;
 import br.com.agm.gravador.capture.MicRecorder;
 
 public class GravadorPNCC extends CordovaPlugin {
@@ -46,18 +47,31 @@ public class GravadorPNCC extends CordovaPlugin {
 			filename = args.getString(0);
 			isRecording = true;
 			micRecorder.startRecording(filename);
+			callbackContext.success();
 		} else if (action.equals("stop")) {
 			if (isRecording) {
 				micRecorder.stopRecording();
-				cordova.getThreadPool().execute(new Runnable() {
+				cordova.getActivity().runOnUiThread(new Runnable() {
 
 					@Override
 					public void run() {
+						Log.i("PLUGIN",
+								"Executing thread " + micRecorder.getFinalWaveFilename() + " "
+										+ micRecorder.getFinalPNCCFilename());
 						pnccNative.converWavToPNCC(micRecorder.getFinalWaveFilename(),
 								micRecorder.getFinalPNCCFilename());
 						callbackContext.success(micRecorder.getFinalPNCCFilename());
 					}
 				});
+				// cordova.getThreadPool().execute(new Runnable() {
+				//
+				// @Override
+				// public void run() {
+				// pnccNative.converWavToPNCC(micRecorder.getFinalWaveFilename(),
+				// micRecorder.getFinalPNCCFilename());
+				// callbackContext.success(micRecorder.getFinalPNCCFilename());
+				// }
+				// });
 
 			}
 
